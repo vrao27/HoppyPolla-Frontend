@@ -1,0 +1,210 @@
+/* google font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
+
+@media screen and (max-width: 1080px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+/* layout */
+:root {
+  --primary: #1aac83;
+  --error: #e7195a;
+}
+
+body {
+  background: #f1f1f1;
+  margin: 0;
+  font-family: "Poppins";
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+header a {
+  color: #333;
+  text-decoration: none;
+}
+
+.pages {
+  max-width: 1400px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+
+/*Navbar*/
+
+.nav-img {
+  display: flex;
+  width: 30%;
+  padding-right: 1%;
+  padding-left: 1%;
+}
+
+
+.nav-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.nav-container a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 2.5%;
+  align-items: center;
+  min-width: 10px;
+}
+
+.nav-container a:hover {
+  color: yellow;
+}
+
+.nav-container a.active {
+  color: red;
+}
+
+.nav-container h1 {
+  margin: 0;
+  font-size: 2rem;
+  padding-right: 35px;
+}
+
+
+
+/*Homepage*/
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px #ccc;
+}
+
+
+.carousel {
+  text-align: center;
+  margin: 0 auto;
+  position: relative;
+}
+
+.carousel-header {
+  font-family: "Poppins";
+  color: #333;
+}
+
+
+.carousel .arrow {
+  position: absolute;
+  top: 50px;
+  bottom: 50px;
+  transform: translateY(-50%);
+  z-index: 1;
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  cursor: pointer;
+  margin-left: 35%;
+  margin-right: 35%;
+}
+
+.carousel .arrow.prev {
+  left: -20px;
+  border-right: 25px solid gray;
+}
+
+.carousel .arrow.next {
+  right: -20px;
+  border-left: 25px solid gray;
+}
+
+.carousel img {
+  position: relative;
+}
+
+img.carousel-img {
+  width: 20%;
+  height: 20%;
+}
+
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+.modal-description-container {
+  width: 50%;
+  padding: 20px;
+  background-color: #f2f2f2;
+  font-size: 1rem;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px #ccc;
+
+}
+
+
+/*Brewpage*/
+
+
+
+/*BrewRecipeDetails*/
+
+
+/*BrewRecipe Form*/
+
+label, input {
+  display: block;
+}
+input {
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+form button {
+  background-color: #333;
+  border: 0;
+  color: #fff;
+  padding: 10px;
+  font-family: "Poppins";
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/*Sign up and Login Pages - Auth Forms*/
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  margin-left: 10px;
+}
+
+form.signup, form.login {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+}
