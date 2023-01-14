@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import Brew from "./pages/Brew";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import Brewing101 from "./pages/Brewing101";
 
 
 //components
@@ -27,6 +28,7 @@ function App() {
                 <Route path="/brew/:id" element={<BrewRecipeDetails />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<Signup />} />
+                <Route path="/brewing101" element={<Brewing101 />} />
               </Routes>
             </div>
           </BrewRecipeContextProvider>
