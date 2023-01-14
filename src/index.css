@@ -219,15 +219,17 @@ form.signup, form.login {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 300px;
-  height: 400px;
+  width: 80%;
+  height: 80%;
   padding: 10px;
   border-radius: 10px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
   margin: 10px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
+  position: relative;
 }
+
 
 .step-card:hover {
   transform: translateY(-5px);
@@ -247,25 +249,127 @@ form.signup, form.login {
   text-align: center;
 }
 
-.step-card p {
-  margin-top: 10px;
-  text-align: center;
-  overflow: hidden;
+.step-card p.description {
+  /* Hidden by default */
+  position: absolute;
   max-height: 0;
-  transition: all 0.5s ease-in-out;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
 }
+
+.step-card.expanded p.description {
+  /* Shown when expanded */
+  max-height: 200px;
+}
+
+
 
 .step-card.expanded p {
   max-height: 100px;
   margin-top: 10px;
 }
 
+.description {
+  overflow: auto;
+  max-height: 150px;
+}
+
+
 /* Brewing101 styles */
-.brewing-101 {
+
+.brewing101-title {
+  text-align: center;
+  font-size: 30px;
+  margin-top: 20px;
+}
+
+.step-card-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
+
+
+
+/*design for the modal description using visibility*/
+
+.modal-overlay {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  visibility: hidden;
+  /* hides the modal by default */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: visibility 0.5s ease-in-out;
+}
+
+
+
+.modal-overlay.open {
+  visibility: visible;
+  /* shows the modal when the class "open" is applied */
+}
+
+
+
+.modal-content {
+  position: relative;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  top: 50%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  max-height: 80%;
+  overflow-y: auto;
+  width: 80%;
+  transition: transform 0.5s ease-in-out; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Add styles for the close button */
+.modal-content button {
+  position: absolute;
+  top: 10px;
+  background: rgb(219, 227, 104);
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  align-self: center;
+}
+
+
+/* Add styles for the modal content container */
+.modal-content p {
+  margin: 10px;
+  text-align: center;
+}
+
+/* Add styles for the modal overlay when it's clicked */
+.modal-overlay:active {
+  visibility: hidden;
+}
+
+/* Add media queries for different screen sizes */
+@media only screen and (max-width: 600px) {
+  .modal-content {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-height: 400px) {
+  .modal-content {
+    max-height: 90%;
+  }
+}
+
 
 /*END Step card and brewing101 page*/

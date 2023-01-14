@@ -92,13 +92,13 @@ const Brewing101 = () => {
   ]);
 
   return (
-    <div>
-      <h2>Brewing 101: For Beginners</h2>
+    <div className="step-card-container">
+      <h2 className="brewing101-title">Brewing 101: For Beginners</h2>
       {steps.map((step, index) => (
         <StepCard key={index} {...step} />
       ))}
     </div>
   );
 };
-
+//use the map to loop through array of steps, use the spread ops here to  pass all the properties of the step object as individual props to the StepCard component.
 export default Brewing101;
