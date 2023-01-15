@@ -1,18 +1,19 @@
-import  { useState } from "react";
-
-
+import { useState } from "react";
+import { useAuthContext } from "../hooks/useAuthContext";
 
 const BeerRecipeForm = () => {
-const [error, setError] = useState(null)
+  const { user } = useAuthContext();
 
-const [title, setTitle] = useState({
+  const [error, setError] = useState(null);
+
+  const [title, setTitle] = useState({
     name: "",
     category: "",
     defaultQty: "",
     image: "",
   });
 
-const [description, setDescription] = useState({
+  const [description, setDescription] = useState({
     text: "",
     originalGravity: "",
     bitterness: "",
@@ -20,17 +21,17 @@ const [description, setDescription] = useState({
     alcohol: "",
   });
 
-const [brewingWater, setBrewingWater] = useState({
+  const [brewingWater, setBrewingWater] = useState({
     mainInfusion: "",
     sparge: "",
     total: "",
   });
 
-const [mashGrains, setMashGrains] = useState({
+  const [mashGrains, setMashGrains] = useState({
     grainType: "",
   });
 
-const [mashSchedule, setMashSchedule] = useState({
+  const [mashSchedule, setMashSchedule] = useState({
     mashIn: "",
     rest1: {
       temperature: "",
@@ -47,7 +48,7 @@ const [mashSchedule, setMashSchedule] = useState({
     mashOut: "",
   });
 
-const [boil, setBoil] = useState({
+  const [boil, setBoil] = useState({
     time: "",
     hopType: "",
     hopAddOn: "",
@@ -110,6 +111,13 @@ const [boil, setBoil] = useState({
   const handleSubmit = (event) => {
     event.preventDefault();
 
+    //check if we have a user
+
+    if (!user) {
+      setError("You must be logged in.");
+      return;
+    }
+
     const recipe = {
       title,
       description,
@@ -119,21 +127,25 @@ const [boil, setBoil] = useState({
       boil,
       fermentation,
     };
-//error habdling to be set after the recipe added and if this does not happen then it logs in the error
+    //error habdling to be set after the recipe added and if this does not happen then it logs in the error
+    //add authorization also here
     fetch("/api/brewrecipes", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Bearer ${user.token}`,
       },
       body: JSON.stringify(recipe),
     })
       .then((res) => res.json())
       .then((res) => {
-        console.log('new recipe added',res);
+        console.log("new recipe added", res);
       })
       .catch((err) => {
         console.error(err);
-        setError("An error occurred while submitting the form. Please try again later.");
+        setError(
+          "An error occurred while submitting the form. Please try again later."
+        );
       });
   };
 

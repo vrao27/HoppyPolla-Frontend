@@ -10,14 +10,17 @@ import Signup from "./pages/Signup";
 import Brewing101 from "./pages/Brewing101";
 import CreateBrew from "./pages/CreateBrew";
 
-
 //components
 import Navbar from "./components/Navbar";
 import BrewRecipeDetails from "./components/BrewRecipeDetails";
-
+// import { useAuthContext } from "./hooks/useAuthContext";
 
 function App() {
+
+ // const {user} = useAuthContext()
+
   return (
+
     <div className="App">
       <BrowserRouter>
         <AuthContextProvider>
@@ -32,7 +35,6 @@ function App() {
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/brewing101" element={<Brewing101 />} />
                 <Route path="/CreateBrew" element={<CreateBrew />} />
-
               </Routes>
             </div>
           </BrewRecipeContextProvider>
@@ -44,32 +46,3 @@ function App() {
 
 export default App;
 
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-// //pages
-// import Home from './pages/Home'
-// import Brew from './pages/Brew'
-
-// //components
-// import Navbar from "./components/Navbar";
-// import BrewRecipeDetails from "./components/BrewRecipeDetails";
-// import BrewRecipesMap from "./components/BrewRecipesMap";
-
-// function App() {
-//   return (
-//     <div className="App">
-//      <BrowserRouter>
-//      <Navbar />
-//      <div className="pages">
-//       <Routes>
-//         <Route path="/" element={<Home />}/>
-//         <Route path="/brew" element={<Brew />} />
-//         <Route path='/brew/:id' element={<BrewRecipeDetails />} />
-//       </Routes>
-//      </div>
-//      </BrowserRouter>
-//     </div>
-//   );
-// }
-
-// export default App;

@@ -2,6 +2,8 @@
 import BrewRecipesMap from "../components/BrewRecipesMap";
 import { Link } from "react-router-dom";
 import { useRecipe } from "../context/BrewRecipeContext";
+import LoginMessage from "../components/LoginMessage";
+
 
 const BrewRecipe = () => {
   const { brewRecipes, setBrewRecipes } = useRecipe();
@@ -17,6 +19,7 @@ const BrewRecipe = () => {
             <BrewRecipesMap brewRecipe={brewRecipe} />
           </Link>
         ))}
+        <LoginMessage />
     </div>
   );
 };
