@@ -8,11 +8,13 @@ import Brew from "./pages/Brew";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Brewing101 from "./pages/Brewing101";
+import CreateBrew from "./pages/CreateBrew";
 
 
 //components
 import Navbar from "./components/Navbar";
 import BrewRecipeDetails from "./components/BrewRecipeDetails";
+
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/brewing101" element={<Brewing101 />} />
+                <Route path="/CreateBrew" element={<CreateBrew />} />
+
               </Routes>
             </div>
           </BrewRecipeContextProvider>

@@ -19,7 +19,7 @@ const Navbar = () => {
         <Link to="/">Home</Link>
         <Link to="/brew">Brew</Link>
         <Link to="/brewing101">Brewing 101</Link>
-        <Link to="/create-brew">Create Brew</Link>
+        <Link to="/CreateBrew">Create Brew</Link>
         <Link to="/contact">Contact</Link>
         <nav>
           {user && (

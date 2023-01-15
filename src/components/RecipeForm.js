@@ -119,7 +119,7 @@ const [boil, setBoil] = useState({
       boil,
       fermentation,
     };
-
+//error habdling to be set after the recipe added and if this does not happen then it logs in the error
     fetch("/api/brewrecipes", {
       method: "POST",
       headers: {
@@ -133,6 +133,7 @@ const [boil, setBoil] = useState({
       })
       .catch((err) => {
         console.error(err);
+        setError("An error occurred while submitting the form. Please try again later.");
       });
   };
 

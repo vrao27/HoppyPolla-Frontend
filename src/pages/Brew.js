@@ -1,5 +1,4 @@
-import { useEffect, useState, useContext } from "react";
-//import BrewRecipeDetails from "../components/BrewRecipeDetails";
+// import BrewRecipeDetails from "../components/BrewRecipeDetails";
 import BrewRecipesMap from "../components/BrewRecipesMap";
 import { Link } from "react-router-dom";
 import { useRecipe } from "../context/BrewRecipeContext";
@@ -8,9 +7,10 @@ const BrewRecipe = () => {
   const { brewRecipes, setBrewRecipes } = useRecipe();
 
 
-  console.log(brewRecipes);
+  //console.log(brewRecipes);
+
   return (
-    <div className="brewRecipe">
+    <div className="brewRecipes">
       {brewRecipes &&
         brewRecipes.map((brewRecipe) => (
           <Link to={`/brew/${brewRecipe._id}`} key={brewRecipe._id}>
