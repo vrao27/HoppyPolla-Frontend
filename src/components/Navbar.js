@@ -20,7 +20,6 @@ const Navbar = () => {
         <Link to="/brew">Brew</Link>
         <Link to="/brewing101">Brewing 101</Link>
         <Link to="/CreateBrew">Create Brew</Link>
-        <Link to="/contact">Contact</Link>
         <nav>
           {user && (
             <div>
@@ -28,7 +27,6 @@ const Navbar = () => {
               <button onClick={handleClick}>Log Out</button>
             </div>
           )}
-
           {!user && (
             <div>
               <Link to="/login">Login</Link>

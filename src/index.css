@@ -81,6 +81,8 @@ header a {
 
 
 
+
+
 /*Homepage this is for Home.js*/
 
 .container {
@@ -167,6 +169,10 @@ img.carousel-img {
 
 
 /*BrewRecipe Form* this is also used oint he login and signiup section*/
+
+.newrecipe-header {
+  margin-left: 38%;
+}
 
 label, input {
   display: block;
@@ -329,7 +335,7 @@ form.signup, form.login {
   max-height: 80%;
   overflow-y: auto;
   width: 80%;
-  transition: transform 0.5s ease-in-out; 
+  transition: transform 0.5s ease-in-out;
   display: flex;
   flex-direction: column;
   align-items: center;

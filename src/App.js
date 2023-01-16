@@ -13,14 +13,12 @@ import CreateBrew from "./pages/CreateBrew";
 //components
 import Navbar from "./components/Navbar";
 import BrewRecipeDetails from "./components/BrewRecipeDetails";
-// import { useAuthContext } from "./hooks/useAuthContext";
+//import { useAuthContext } from "./hooks/useAuthContext";
 
 function App() {
-
- // const {user} = useAuthContext()
+  //const { user } = useAuthContext();
 
   return (
-
     <div className="App">
       <BrowserRouter>
         <AuthContextProvider>
@@ -28,10 +26,10 @@ function App() {
           <BrewRecipeContextProvider>
             <div className="pages">
               <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/brew" element={<Brew />} />
+                <Route path="/" element={<Home/>} />
+                <Route path="/brew" element={<Brew />}/>
                 <Route path="/brew/:id" element={<BrewRecipeDetails />} />
-                <Route path="/login" element={<Login />} />
+                <Route path="/login" element={ <Login />} />
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/brewing101" element={<Brewing101 />} />
                 <Route path="/CreateBrew" element={<CreateBrew />} />
@@ -45,4 +43,3 @@ function App() {
 }
 
 export default App;
-
