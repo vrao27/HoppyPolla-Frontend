@@ -1,12 +1,9 @@
-import { useAuthContext } from "../hooks/useAuthContext";
-import { useContext } from "react";
-import { Outlet, Navigate } from "react-router-dom";
 import Login from '../pages/Login';
 
 const LoginMessage = () => {
   return (
     <div>
-      <h3>To create a reacipe you need to sign in!</h3>
+      <h3 className="login-message">"Sign Up to view and create your own Brew!"</h3>
       <Login />
     </div>
   );

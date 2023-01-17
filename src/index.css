@@ -200,6 +200,10 @@ form button {
 
 /*Sign up and Login Pages - Auth Forms*/
 
+.login-message {
+  margin-left: 30%;
+}
+
 nav {
   display: flex;
   align-items: center;
