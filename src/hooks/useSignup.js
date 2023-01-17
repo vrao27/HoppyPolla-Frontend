@@ -13,7 +13,7 @@ const signupURL = `${baseURL}/signup`;
 export const useSignup = () => {
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(null);
-  const { dispatch } = useAuthContext();
+  const { dispatch, setIsAuth } = useAuthContext();
 
   const signup = async (email, password) => {
     //console.log('Data being sent to the server:', { email, password });
@@ -47,6 +47,7 @@ export const useSignup = () => {
       dispatch({ type: "LOGIN", payload: json });
 
       setIsLoading(false);
+      setIsAuth(true);
     }
   };
 

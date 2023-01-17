@@ -1,4 +1,3 @@
-
 import { createContext, useContext, useState, useEffect } from "react";
 import { useAuthContext } from "../hooks/useAuthContext";
 
@@ -6,15 +5,11 @@ const BrewRecipeContext = createContext();
 
 const useRecipe = () => useContext(BrewRecipeContext);
 
-
-//set the Port here 
+//set the Port here
 const PORT = process.env.PORT || 5000;
 const baseURL = `http://localhost:${PORT}/api/brewrecipes`;
 
-
 const BrewRecipeContextProvider = ({ children }) => {
-  
-
   const [brewRecipes, setBrewRecipes] = useState([]);
 
   const { user } = useAuthContext();
@@ -23,7 +18,7 @@ const BrewRecipeContextProvider = ({ children }) => {
     const fetchRecipes = async () => {
       //need to add an extra step to verify if there is a user and token and only then fetch recipes
       const token = user.token;
-      console.log(user)
+      //console.log(user)
       if (user && token) {
         const response = await fetch(baseURL, {
           headers: {
@@ -43,6 +38,7 @@ const BrewRecipeContextProvider = ({ children }) => {
     };
     fetchRecipes();
   }, [user]);
+
 
 
   //this is for trouble shooting, I am able to see the data in the console with the token provided.

@@ -13,7 +13,7 @@ import CreateBrew from "./pages/CreateBrew";
 //components
 import Navbar from "./components/Navbar";
 import BrewRecipeDetails from "./components/BrewRecipeDetails";
-import LoginMessage from "./components/LoginMessage";
+import Auth from "./components/Auth";
 //import { useAuthContext } from "./hooks/useAuthContext";
 
 function App() {
@@ -33,9 +33,9 @@ function App() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/brewing101" element={<Brewing101 />} />
-                <Route path="/LoginMessage" element={<LoginMessage />}>
+                <Route path="/auth" element={<Auth />}>
                   <Route
-                    path="LoginMessage/CreateBrew"
+                    path="/auth/CreateBrew"
                     element={<CreateBrew />}
                   />
                 </Route>
