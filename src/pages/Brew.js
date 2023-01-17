@@ -20,7 +20,7 @@ const BrewRecipe = () => {
   }, [isAuth]);
 
   return (
-    <div className="brewRecipes">
+    <div className="brewRecipes container">
       {brewRecipes &&
         brewRecipes.map((brewRecipe) => (
           <Link to={`/brew/${brewRecipe._id}`} key={brewRecipe._id}>

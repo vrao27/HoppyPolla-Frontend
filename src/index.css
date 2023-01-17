@@ -163,9 +163,30 @@ img.carousel-img {
 
 /*Brewpage*/
 
+.brewRecipes.container {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 
 
 /*BrewRecipeDetails*/
+
+.brew-recipe-details.container {
+  width: 80%;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-sizing: border-box;
+  }
+  
+  .container {
+  width: 80%;
+  margin: 0 auto;
+  }
 
 
 /*BrewRecipe Form* this is also used oint he login and signiup section*/

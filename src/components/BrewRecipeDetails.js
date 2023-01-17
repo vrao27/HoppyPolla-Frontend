@@ -23,7 +23,7 @@ const BrewRecipeDetails = () => {
             boil,
             fermentation,
           }) => (
-            <div className="brew-recipe-details">
+            <div className="brew-recipe-details container">
               <h1>{name}</h1>
               <p>Category: {category}</p>
               <p>Default Quantity: {defaultQty} Liters</p>
@@ -32,7 +32,7 @@ const BrewRecipeDetails = () => {
               <p>Original Gravity: {description.originalGravity}</p>
               <p>Bitterness: {description.bitterness}</p>
               <p>Color: {description.color}</p>
-              <p>Alcohol: {description.alcohol}</p>
+              <p>Alcohol (%): {description.alcohol}</p>
               <h2>Brewing Water</h2>
               <p>Main Infusion: {brewingWater.mainInfusion}</p>
               <p>Sparge: {brewingWater.sparge}</p>
@@ -40,7 +40,7 @@ const BrewRecipeDetails = () => {
               <h2>Mash Grains</h2>
               <p>{mashGrains.grainType}</p>
               <h2>Mash Schedule</h2>
-              <p>Mash In: {mashSchedule.mashIn}</p>
+              <p>Mash In (°C): {mashSchedule.mashIn}</p>
               <p>
                 Rest 1: {mashSchedule.rest1.temperature} for{" "}
                 {mashSchedule.rest1.time} minutes
@@ -55,7 +55,7 @@ const BrewRecipeDetails = () => {
                   {mashSchedule.rest3.time} minutes
                 </p>
               )}
-              <p>Mash Out: {mashSchedule.mashOut}</p>
+              <p>Mash Out (°C): {mashSchedule.mashOut}</p>
               <h2>Boil</h2>
               <p>Time: {boil.time} minutes</p>
               <p>Hop Type: {boil.hop_type}</p>
@@ -63,7 +63,7 @@ const BrewRecipeDetails = () => {
               <h2>Fermentation</h2>
               <p>Yeast: {fermentation.yeast}</p>
               <p>
-                Fermentation Temperature: {fermentation.fermentationTemperature}
+                Fermentation Temperature (°C): {fermentation.fermentationTemperature}
               </p>
               <p>Final Gravity: {fermentation.finalGravity}</p>
               <p>Carbonation: {fermentation.carbonation}</p>
