@@ -1,10 +1,12 @@
+import { useAuthContext } from "../hooks/useAuthContext";
+import { useContext } from "react";
+import { Outlet, useNavigate } from "react-router-dom";
 
 const LoginMessage = () => {
-    return (
-      <div className="login-message-container">
-        <p>Please log in to view recipes and create recipes.</p>
-      </div>
-    );
-  };
-  
-  export default LoginMessage;
+  const navigate = useNavigate();
+  const { isAuth } = useAuthContext();
+
+  return !isAuth ? navigate("/login") : <Outlet />;
+};
+
+export default LoginMessage;

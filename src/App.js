@@ -13,6 +13,7 @@ import CreateBrew from "./pages/CreateBrew";
 //components
 import Navbar from "./components/Navbar";
 import BrewRecipeDetails from "./components/BrewRecipeDetails";
+import LoginMessage from "./components/LoginMessage";
 //import { useAuthContext } from "./hooks/useAuthContext";
 
 function App() {
@@ -26,13 +27,18 @@ function App() {
           <BrewRecipeContextProvider>
             <div className="pages">
               <Routes>
-                <Route path="/" element={<Home/>} />
-                <Route path="/brew" element={<Brew />}/>
+                <Route path="/" element={<Home />} />
+                <Route path="/brew" element={<Brew />} />
                 <Route path="/brew/:id" element={<BrewRecipeDetails />} />
-                <Route path="/login" element={ <Login />} />
+                <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/brewing101" element={<Brewing101 />} />
-                <Route path="/CreateBrew" element={<CreateBrew />} />
+                <Route path="/LoginMessage" element={<LoginMessage />}>
+                  <Route
+                    path="LoginMessage/CreateBrew"
+                    element={<CreateBrew />}
+                  />
+                </Route>
               </Routes>
             </div>
           </BrewRecipeContextProvider>

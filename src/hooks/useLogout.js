@@ -1,7 +1,7 @@
 import { useAuthContext } from "./useAuthContext";
 
 export const useLogout = () => {
-  const { dispatch } = useAuthContext();
+  const { dispatch, setIsAuth } = useAuthContext();
 
   const logout = () => {
     //update the gloabl state - remove user from storage
@@ -10,6 +10,7 @@ export const useLogout = () => {
 
     //dispatch logout action
     dispatch({ type: "LOGOUT" });
+    setIsAuth(false);
   };
 
   return { logout };

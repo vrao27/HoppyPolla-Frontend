@@ -6,17 +6,23 @@ import { useAuthContext } from "./useAuthContext";
 export const useLogin = () => {
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(null);
-  const { dispatch } = useAuthContext();
+  const { dispatch, setIsAuth } = useAuthContext();
+
+
+//Set the port variable here for fetch calls
+
+const PORT = process.env.PORT || 5000;
+const baseURL = `http://localhost:${PORT}/api/user`;
+const loginURL = `${baseURL}/login`;
+
 
   const login = async (email, password) => {
     //console.log('Data being sent to the server:', { email, password });
 
-    const port = "http://localhost:4000/api/user/login";
-
     setIsLoading(true);
     setError(null);
 
-    const response = await fetch(port, {
+    const response = await fetch(loginURL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
@@ -41,6 +47,7 @@ export const useLogin = () => {
       dispatch({ type: "LOGIN", payload: json });
 
       setIsLoading(false);
+      setIsAuth(true);
     }
   };
 

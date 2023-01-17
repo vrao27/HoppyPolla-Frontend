@@ -1,6 +1,13 @@
 import { useState } from "react";
 import { useAuthContext } from "./useAuthContext";
 
+
+//Set the port variable here for fetch calls
+
+const PORT = process.env.PORT || 5000;
+const baseURL = `http://localhost:${PORT}/api/user`;
+const signupURL = `${baseURL}/signup`;
+
 //We use this hook in the signup component
 
 export const useSignup = () => {
@@ -11,12 +18,11 @@ export const useSignup = () => {
   const signup = async (email, password) => {
     //console.log('Data being sent to the server:', { email, password });
 
-    const port = "http://localhost:4000/api/user/signup";
 
     setIsLoading(true);
     setError(null);
 
-    const response = await fetch(port, {
+    const response = await fetch(signupURL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
@@ -24,7 +30,7 @@ export const useSignup = () => {
 
     const json = await response.json();
 
-    //console.log('Server response:', json);
+    console.log('Server response:', json);
 
     if (!response.ok) {
       setIsLoading(false);
