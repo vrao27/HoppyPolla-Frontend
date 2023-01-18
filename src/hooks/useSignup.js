@@ -5,8 +5,8 @@ import { useAuthContext } from "./useAuthContext";
 //Set the port variable here for fetch calls
 
 // const PORT = process.env.PORT || 5000;
-const PORT = process.env.PORT 
-const baseURL = `http://localhost:${PORT}/api/user`;
+// const baseURL = `http://localhost:${PORT}/api/user`;
+const baseURL = `https://hoppypolla-backend-deploy.onrender.com/api/user`;
 const signupURL = `${baseURL}/signup`;
 
 //We use this hook in the signup component
