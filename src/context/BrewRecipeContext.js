@@ -6,8 +6,9 @@ const BrewRecipeContext = createContext();
 const useRecipe = () => useContext(BrewRecipeContext);
 
 //set the Port here
-const PORT = process.env.PORT || 5000;
-const baseURL = `http://localhost:${PORT}/api/brewrecipes`;
+// const PORT = process.env.PORT || 5000;
+const baseURL = `https://hoppypolla-backend-deploy.onrender.com/api/brewrecipes`;
+// const baseURL = `http://localhost:${PORT}/api/brewrecipes`;
 
 const BrewRecipeContextProvider = ({ children }) => {
   const [brewRecipes, setBrewRecipes] = useState([]);
