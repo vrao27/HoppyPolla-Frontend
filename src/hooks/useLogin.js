@@ -11,7 +11,8 @@ export const useLogin = () => {
 
 //Set the port variable here for fetch calls
 
-const PORT = process.env.PORT || 5000;
+// const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT 
 const baseURL = `http://localhost:${PORT}/api/user`;
 const loginURL = `${baseURL}/login`;
 
