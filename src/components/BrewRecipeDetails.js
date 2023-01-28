@@ -15,7 +15,7 @@ const BrewRecipeDetails = () => {
         .filter((brewRecipe) => (id ? id === brewRecipe._id : brewRecipe))
         .map(
           ({
-            title: { name, category, defaultQty },
+            title: { name, category, batchVolume },
             description,
             brewingWater,
             mashGrains,
@@ -26,7 +26,7 @@ const BrewRecipeDetails = () => {
             <div className="brew-recipe-details container">
               <h1>{name}</h1>
               <p>Category: {category}</p>
-              <p>Default Quantity: {defaultQty} Liters</p>
+              <p>Batch Quantity: {batchVolume} Liters</p>
               <h2>Description</h2>
               <p>{description.text}</p>
               <p>Original Gravity: {description.originalGravity}</p>
@@ -38,7 +38,7 @@ const BrewRecipeDetails = () => {
               <p>Sparge: {brewingWater.sparge}</p>
               <p>Total: {brewingWater.total}</p>
               <h2>Mash Grains</h2>
-              <p>{mashGrains.grainType}</p>
+              <p>{mashGrains.grainType}{mashGrains.amount}</p>
               <h2>Mash Schedule</h2>
               <p>Mash In (°C): {mashSchedule.mashIn}</p>
               <p>
