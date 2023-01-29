@@ -63,9 +63,9 @@ const BrewRecipeDetails = () => {
               <h2>Boil</h2>
               <p>Time: {boil.time} minutes</p>
               <h3>Hops</h3>
-              {boil.hops.map((hop) => (
-                <p key={hop._id}>
-                  {hop.name} {hop.amount} {hop.unit} at {hop.time} minutes
+              {boil.hops.map((hops) => (
+                <p key={hops._id}>
+                  {hops.name} {hops.amount} {hops.unit} at {hops.time} minutes
                 </p>
               ))}
               <h3>Additional Ingredients</h3>
