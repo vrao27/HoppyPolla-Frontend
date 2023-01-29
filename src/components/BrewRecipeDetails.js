@@ -66,13 +66,13 @@ const BrewRecipeDetails = () => {
               <h3>Hops</h3>
               {boil.hops.map((hops) => (
                 <p key={hops._id}>
-                  {hops.type} {hops.amount} {hops.boilingTime} minutes
+                  {hops.type} {hops.amount} grams for {hops.boilingTime} minutes
                 </p>
               ))}
               <h3>Additional Ingredients</h3>
               {boil.addOns.map((addOns) => (
                 <p key={addOns._id}>
-                  {addOns.type} {addOns.amount}
+                  {addOns.type} {addOns.amount} grams for {addOns.boilingTime} minutes
                 </p>
               ))}
               <h2>Fermentation</h2>
