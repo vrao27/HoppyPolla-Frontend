@@ -38,7 +38,11 @@ const BrewRecipeDetails = () => {
               <p>Sparge: {brewingWater.sparge}</p>
               <p>Total: {brewingWater.total}</p>
               <h2>Mash Grains</h2>
-              <p>{mashGrains.grainType}{mashGrains.amount}</p>
+              {mashGrains.map((mashGrain) => (
+                <p key={mashGrain._id}>
+                  {mashGrain.grainType} {mashGrain.amount}
+                </p>
+              ))}
               <h2>Mash Schedule</h2>
               <p>Mash In (°C): {mashSchedule.mashIn}</p>
               <p>
@@ -58,12 +62,18 @@ const BrewRecipeDetails = () => {
               <p>Mash Out (°C): {mashSchedule.mashOut}</p>
               <h2>Boil</h2>
               <p>Time: {boil.time} minutes</p>
-              <p>Hop Type: {boil.hop_type}</p>
-              <p>Additional Ingredients: {boil.hop_add_on}</p>
+              <p>Hop Type: {boil.hopType}</p>
+              <h3>Additional Ingredients</h3>
+              {boil.hopAddOns.map((hopAddOn) => (
+                <p key={hopAddOn._id}>
+                  {hopAddOn.hopType} {hopAddOn.amount}
+                </p>
+              ))}
               <h2>Fermentation</h2>
               <p>Yeast: {fermentation.yeast}</p>
               <p>
-                Fermentation Temperature (°C): {fermentation.fermentationTemperature}
+                Fermentation Temperature (°C):{" "}
+                {fermentation.fermentationTemperature}
               </p>
               <p>Final Gravity: {fermentation.finalGravity}</p>
               <p>Carbonation: {fermentation.carbonation}</p>
