@@ -41,6 +41,7 @@ const BrewRecipeDetails = () => {
               {mashGrains.map((mashGrain) => (
                 <p key={mashGrain._id}>
                   {mashGrain.grainType} {mashGrain.amount}
+                  kgs
                 </p>
               ))}
               <h2>Mash Schedule</h2>
@@ -65,13 +66,13 @@ const BrewRecipeDetails = () => {
               <h3>Hops</h3>
               {boil.hops.map((hops) => (
                 <p key={hops._id}>
-                  {hops.name} {hops.amount} {hops.unit} at {hops.time} minutes
+                  {hops.type} {hops.amount} {hops.boilingTime} minutes
                 </p>
               ))}
               <h3>Additional Ingredients</h3>
               {boil.addOns.map((addOns) => (
                 <p key={addOns._id}>
-                  {addOns.hops} {addOns.amount}
+                  {addOns.type} {addOns.amount}
                 </p>
               ))}
               <h2>Fermentation</h2>
